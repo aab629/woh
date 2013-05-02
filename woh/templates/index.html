@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+
+{% block title %}Wage and Hour Law Violations in Columbia{% endblock %}
+
+{% block content %}
+
+    <h1>Wage and Hour Law Violations in Columbia</h1>
+
+    <table>
+
+    {% for w in incidents %}
+        <tr>
+
+            <td><a href="{% url biz_detail w.id %}">{{ w.trade_nm }}</a></td>
+            <td>{{ w.street_addr_1_txt }}</td>
+            <td>{{ w.naics_code_description}}</td>
+            <td>{{ w.case_violtn_cnt }}</td>
+
+        </tr>
+    {% endfor %}
+
+    </ul>
+
+{% endblock %}

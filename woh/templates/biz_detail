@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+
+{% block title %}Details about business{{ biz.trade_nm }}{% endblock %}
+
+{% block content %}
+
+<h1>{{ biz.trade_nm }}</h1>
+
+<ul>
+    <li><strong>Address</strong>: {{ biz.street_addr_1_txt }}</li>
+    <li><strong>Industry</strong>: {{ naics_code_description }}</li>
+    <li><strong>Number of violations</strong>: {{ naics_code_description }}</li>
+    <li><strong>Number of employees covered by violation</strong>: {{ naics_code_description }}</li>
+    <li><strong>Findings start and end dates</strong>: {{ findings_start_date }} {{ findings_end_date }} </li> 
+    <li><strong>Backwages agreed to pay</strong>: {{ bw_atp_amt }}</li>
+    <li><strong>Backwages agreed to pay, under the Fair Labor Standards Act</strong>: {{ flsa_bw_atp_amt }}</li> 
+    <li><strong>Backwages from minimum wage violations agreed to pay, under the Fair Labor Standards Act</strong>: {{ flsa_bw_atp_amt }}</li> 
+    <li><strong>Backwages from minimum wage violations agreed to pay, under the Fair Labor Standards Act</strong>: {{ flsa_mw_bw_atp_amt }}</li> 
+    <li><strong>Backwages from minimum wage violations agreed to pay, under the Fair Labor Standards Act</strong>: {{ flsa_ot_bw_atp_amt }}</li> 
+</ul>
+
+
+{% endblock %}

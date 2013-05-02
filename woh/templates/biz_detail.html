@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+
+{% block title %}Details about business{{ biz.trade_nm }}{% endblock %}
+
+{% block content %}
+
+<h1>{{ biz.trade_nm }}</h1>
+
+<ul>
+    <li><strong>Address</strong>: {{ biz.street_addr_1_txt }}</li>
+    <li><strong>Industry</strong>: {{ biz.naics_code_description }}</li>
+    <li><strong>Number of violations</strong>: {{ biz.naics_code_description }}</li>
+    <li><strong>Number of employees covered by violation</strong>: {{ biz.naics_code_description }}</li>
+    <li><strong>Findings start and end dates</strong>: {{ biz.findings_start_date }} {{ biz.findings_end_date }} </li> 
+    <li><strong>Backwages agreed to pay</strong>: {{ biz.bw_atp_amt }}</li>
+    <li><strong>Backwages agreed to pay, under the Fair Labor Standards Act</strong>: {{ biz.flsa_bw_atp_amt }}</li> 
+    <li><strong>Backwages from minimum wage violations agreed to pay, under the Fair Labor Standards Act</strong>: {{ biz.flsa_bw_atp_amt }}</li> 
+    <li><strong>Backwages from minimum wage violations agreed to pay, under the Fair Labor Standards Act</strong>: {{ biz.flsa_mw_bw_atp_amt }}</li> 
+    <li><strong>Backwages from minimum wage violations agreed to pay, under the Fair Labor Standards Act</strong>: {{ biz.flsa_ot_bw_atp_amt }}</li> 
+</ul>
+
+<p><img border="0" src="//maps.googleapis.com/maps/api/staticmap?center=Columbia,MO&zoom=12&size=600x300&maptype=roadmap&markers=color:red%7C{{ biz.lat }},{{ biz.lng }}&sensor=false&key=AIzaSyBHzltlpZO7-M45CQN2kxw1j4Mo3T60ik0" alt="Dispatch to {{ biz.street_addr_1_txt }}" /></p>
+
+
+{% endblock %}
+
