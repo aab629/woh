@@ -16,7 +16,7 @@ urlpatterns = patterns('',
     url(r'^admin/', include(admin.site.urls)),
     url('^$', 'woh.data.views.index', name='index'),
 
-    url('^worst-overtime-offenders/$', woh.data.views.overtime, name='overtime'),
-    url(^woh/(\d*)/$', 'woh.data.views.biz_detail', name='biz_detail'),
+    url('^worst-overtime-offenders/$', 'woh.data.views.overtime', name='overtime'),
+    url('^woh/(\d*)/$', 'woh.data.views.biz_detail', name='biz_detail'),
 
 )
