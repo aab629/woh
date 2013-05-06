@@ -4,7 +4,6 @@ from django.shortcuts import render_to_response
 
 # Remember: Django views are simply functions that accept a HTTP request as an argument
 def index(request):
-    print "THIS WORKS"
     # First we're going to get a list of all the crimes in our dataset
     all_viols = Woh.objects.all()
 
@@ -23,3 +22,7 @@ def biz_detail(request, biz_nm):
 
     # ... and we'll send it to a different template in exactly the same way as above
     return render_to_response('biz_detail.html', {'biz': biz})
+
+def overtime(request):
+    overtime = Woh.objects.all().order_by('flsa_ot_bw_atp_amt')
+    return render_to_response('overtime.html', {'overtime:' overtime})
